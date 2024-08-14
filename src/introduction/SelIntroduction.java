@@ -16,7 +16,7 @@ public class SelIntroduction {
 		//Safari SafariDriver ->Methods -- close get
 		
 		//Webdriver ->is a interface methods with empty body -- close get
-		//Webdriver methods + chromedriver class own methods
+		//Webdriver methods + chromedriver class own methods can implement
 		/// ChromeDriver driver = new ChromeDriver();
 		/// driver.resetInputState();//only chrome driver class method
 		
@@ -25,6 +25,7 @@ public class SelIntroduction {
 		//// System.setProperty("webdriver.chrome.driver", "c:/path to downloaded chrome driver/Chromedriver.exe");
 		
 		//driver object has access to the methods of chrome driver which are defined in web driver interface
+		//cant access the personal chrome driver classes now
 		WebDriver driver = new ChromeDriver(); 
 		
 		//firefox Launch

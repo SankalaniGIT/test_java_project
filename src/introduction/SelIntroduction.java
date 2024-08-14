@@ -21,7 +21,8 @@ public class SelIntroduction {
 		/// driver.resetInputState();//only chrome driver class method
 		
 		//Chromedriver.exe -> Chrome browser selenium manager
-		//step to invoke chrome driver
+		//step to invoke chrome driver 
+		//in here selenium manager not working its in disable way because this is not need cos webdriver is downloaded to your loacal computer
 		//// System.setProperty("webdriver.chrome.driver", "c:/path to downloaded chrome driver/Chromedriver.exe");
 		
 		//driver object has access to the methods of chrome driver which are defined in web driver interface
@@ -41,7 +42,7 @@ public class SelIntroduction {
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 		driver.close();
-		driver.quit();
+		driver.quit();//close all associate windows
 		
 		
 

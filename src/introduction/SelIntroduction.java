@@ -44,7 +44,7 @@ public class SelIntroduction {
 		driver.close();
 		driver.quit();//close all associate windows
 		
-		//test new one
+		//test new onecc
 
 	}
 

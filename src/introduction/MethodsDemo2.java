@@ -9,7 +9,7 @@ public class MethodsDemo2 {
 	public void getUserData()
 
 	{
-	System.out.println ("hello world");
+	System.out.println ("hello world 2nd method");
 	}
 
 }

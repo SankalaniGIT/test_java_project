@@ -4,27 +4,35 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class implicitWait {
+public class explicitWait {
     public static void main(String[] args) throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        //***** implicit wait can apply globally like below its apply each and every steps 5 seconds waits but performance issues are not caught
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); //New version implisit wait ************
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); (Old way of implisit wait)
-
+        WebDriver driver= new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+        // Explicit wait is applied targeted elements not for entire code. so no performance issues.
+//        WebDriverWait waitOld =new WebDriverWait(driver,5); old virsion wait
+        WebDriverWait w =new WebDriverWait(driver, Duration.ofSeconds(5)); //new version of explicit wait
+
+
         String[] itemsNeeded={"Cucumber","Brocolli","Beetroot"};
         Thread.sleep(3000);
         addItems(driver,itemsNeeded);
         driver.findElement(By.cssSelector("img[alt=Cart]")).click();
         driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input.promoCode")));
+
         driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
         driver.findElement(By.cssSelector("button.promoBtn")).click();
+
+        w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.promoInfo")));
+
         System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
 
     }

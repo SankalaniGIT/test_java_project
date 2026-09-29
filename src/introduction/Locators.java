@@ -19,7 +19,7 @@ class Locators {
 
 		WebDriver driver = new ChromeDriver();
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//this is globally applicable to each and every step. it's not just for the immediate below step.
 
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
 
@@ -45,7 +45,7 @@ class Locators {
 
 		driver.findElement(By.xpath("//input[@type='text'][2]")).clear();
 
-		driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys("john@gmail.com");
+		driver.findElement(By.cssSelector("input[type='text']:nth-child(3)")).sendKeys("john@gmail.com");//in cssSelector locator its count hidden attributes also when if there hidden elements need to consider about that.
 
 		driver.findElement(By.xpath("//form/input[3]")).sendKeys("9864353253");
 
@@ -58,12 +58,12 @@ class Locators {
 		Thread.sleep(1000);
 
 		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
-
-		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
+		//regular expression cssSelector
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy"); //identify all the input elements where the type attribute start with 'pass'
 
 		driver.findElement(By.id("chkboxOne")).click();
 
-		driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
+		driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click(); //Regular expression
 
 	}
 

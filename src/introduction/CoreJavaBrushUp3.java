@@ -17,7 +17,7 @@ public class CoreJavaBrushUp3 {
 		String s3 = new String("welcome");
 		
 		
-		String s = "Apple offiicial web";
+		String s = "Apple official web";
 
 		String[] splittedString = s.split(" ");
 

@@ -13,9 +13,9 @@ public class MethodsDemo {
 
 		MethodsDemo2 d1 = new MethodsDemo2();
 
-		d1.getUserData();
+		d1.getUserData();// call method with object
 
-		getData2();
+		getData2(); // static method without object
 		
 		//inside static method we can only call static variables
 		System.out.println(x);
